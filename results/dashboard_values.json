@@ -1,0 +1,42 @@
+{
+  "tiles": {
+    "Activities touched by D3 per new player": "6.9",
+    "Passed day-one quest break": "55%",
+    "Guild join rate by D3": "16%",
+    "High-risk players (churn alert)": "20%"
+  },
+  "ab": {
+    "control": {
+      "players": 9939,
+      "rr7": 0.6476506690813966
+    },
+    "test": {
+      "players": 10061,
+      "rr7": 0.6425802604114899
+    }
+  },
+  "difference_pp": -0.5070408669906712,
+  "p_value": 0.45367886849333994,
+  "sample_ratio_gap": 0.0061,
+  "alerts": [
+    [
+      "Critical",
+      "Guild join rate on S184 dropped 32% vs 7-day average",
+      "Live Ops + Community"
+    ],
+    [
+      "OK",
+      "Sample size of Test 1 reached (9,939 / 6,510 per group)",
+      "Data"
+    ]
+  ],
+  "guild_join_last_day": {
+    "S180": 0.16666666666666666,
+    "S181": 0.1440677966101695,
+    "S182": 0.16243654822335024,
+    "S183": 0.20670391061452514,
+    "S184": 0.11330049261083744,
+    "S185": 0.1625615763546798,
+    "S186": 0.12135922330097088
+  }
+}

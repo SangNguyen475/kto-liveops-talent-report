@@ -1,0 +1,39 @@
+{
+  "players_total": 20000,
+  "players_train": 14000,
+  "players_test": 6000,
+  "churn_rate": 0.36545,
+  "logistic_regression": {
+    "auc": 0.8908019894233281,
+    "precision_top20": 0.8391666666666666,
+    "recall_top20": 0.45918832649338803,
+    "standardised_coefficients": {
+      "D1 online minutes": -0.7087775105320965,
+      "Activities touched by D3": -0.29396674404189405,
+      "Passed day-one quest break": -0.5432672294959207,
+      "Active days D1-D3": -0.46779090958733793,
+      "Level on D3": -0.28502160012060274,
+      "Joined a guild by D3": -0.48630137188617745,
+      "Check-in claims D1-D3": -0.09398994163637502,
+      "Paid by D3": -0.1923969277360473,
+      "Came from paid UA": 0.1585968099775459
+    }
+  },
+  "decision_tree_depth4": {
+    "auc": 0.8739977991917594
+  },
+  "risk_tiers_test_set": {
+    "Low": {
+      "share": 0.5,
+      "churn_by_d7": 0.074
+    },
+    "Medium": {
+      "share": 0.3,
+      "churn_by_d7": 0.5355555555555556
+    },
+    "High": {
+      "share": 0.2,
+      "churn_by_d7": 0.8391666666666666
+    }
+  }
+}

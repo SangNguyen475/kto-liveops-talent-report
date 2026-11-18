@@ -1,0 +1,10 @@
+|--- Passed day-one quest break <= 0.50
+|   |--- Active days D1-D3 <= 1.50
+|   |   |--- weights: [588.00, 2381.00] class: 1
+|   |--- Active days D1-D3 >  1.50
+|   |   |--- weights: [1406.00, 1871.00] class: 1
+|--- Passed day-one quest break >  0.50
+|   |--- Active days D1-D3 <= 1.50
+|   |   |--- weights: [553.00, 266.00] class: 0
+|   |--- Active days D1-D3 >  1.50
+|   |   |--- weights: [6337.00, 598.00] class: 0

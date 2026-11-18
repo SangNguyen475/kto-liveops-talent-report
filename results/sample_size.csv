@@ -1,0 +1,4 @@
+metric,baseline_assumed,min_change,players_per_group
+RR7 (Test 1),0.2,0.02,6510
+RR7 (Test 1),0.2,0.03,2943
+RR30 of High and Medium tiers (Test 2),0.08,0.02,3213

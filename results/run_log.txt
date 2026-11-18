@@ -1,0 +1,76 @@
+== 1. Generate the sample
+Saved 20,000 players to new_players_sample.csv
+Churn by D7: 36.5%
+Passed the day-one quest break: 55.5%
+Joined a guild by D3: 15.8%
+
+== 2. Train the models
+Train / test: 14,000 / 6,000 players, churn rate 36.5%
+Logistic regression AUC: 0.891
+Decision tree (depth 4) AUC: 0.874
+Top 20% risk group: precision 83.9%, recall 45.9%
+  Low    tier: 50% of players, churn by D7 7.4%
+  Medium tier: 30% of players, churn by D7 53.6%
+  High   tier: 20% of players, churn by D7 83.9%
+Two-level decision tree rules:
+|--- Passed day-one quest break <= 0.50
+|   |--- Active days D1-D3 <= 1.50
+|   |   |--- weights: [588.00, 2381.00] class: 1
+|   |--- Active days D1-D3 >  1.50
+|   |   |--- weights: [1406.00, 1871.00] class: 1
+|--- Passed day-one quest break >  0.50
+|   |--- Active days D1-D3 <= 1.50
+|   |   |--- weights: [553.00, 266.00] class: 0
+|   |--- Active days D1-D3 >  1.50
+|   |   |--- weights: [6337.00, 598.00] class: 0
+
+
+== 3. Sample size
+                                metric  baseline_assumed  min_change  players_per_group
+                          RR7 (Test 1)              0.20        0.02               6510
+                          RR7 (Test 1)              0.20        0.03               2943
+RR30 of High and Medium tiers (Test 2)              0.08        0.02               3213
+
+== 4. Dashboard mock-up
+{
+  "tiles": {
+    "Activities touched by D3 per new player": "6.9",
+    "Passed day-one quest break": "55%",
+    "Guild join rate by D3": "16%",
+    "High-risk players (churn alert)": "20%"
+  },
+  "ab": {
+    "control": {
+      "players": 9939,
+      "rr7": 0.6476506690813966
+    },
+    "test": {
+      "players": 10061,
+      "rr7": 0.6425802604114899
+    }
+  },
+  "difference_pp": -0.5070408669906712,
+  "p_value": 0.45367886849333994,
+  "sample_ratio_gap": 0.0061,
+  "alerts": [
+    [
+      "Critical",
+      "Guild join rate on S184 dropped 32% vs 7-day average",
+      "Live Ops + Community"
+    ],
+    [
+      "OK",
+      "Sample size of Test 1 reached (9,939 / 6,510 per group)",
+      "Data"
+    ]
+  ],
+  "guild_join_last_day": {
+    "S180": 0.16666666666666666,
+    "S181": 0.1440677966101695,
+    "S182": 0.16243654822335024,
+    "S183": 0.20670391061452514,
+    "S184": 0.11330049261083744,
+    "S185": 0.1625615763546798,
+    "S186": 0.12135922330097088
+  }
+}
